@@ -9,25 +9,23 @@ img.classList.add("large");
 img.style.transition = "transform ease-in-out 1s";
 
 function next() {
-    indexOfImg++;
-    if (indexOfImg >= images.length) {
-        indexOfImg = 0;
-    }
-    setTimeout(function() {
-        img.src = images[indexOfImg];
-    }, 1000);
-   
+  indexOfImg++;
+  if (indexOfImg >= images.length) {
+    indexOfImg = 0;
+  }
+  setTimeout(function() {
+    img.src = images[indexOfImg];
+  }, 1000);
 }
 
 function prev() {
-    indexOfImg--;
-    if (indexOfImg < 0) {
-        indexOfImg = images.length - 1;
-    }
-    setTimeout(function() {
-        img.src = images[indexOfImg];
-    }, 1000);
-   
+  indexOfImg--;
+  if (indexOfImg < 0) {
+    indexOfImg = images.length - 1;
+  }
+  setTimeout(function() {
+    img.src = images[indexOfImg];
+  }, 1000);
 }
 
 btn.addEventListener("click", next);
@@ -38,44 +36,48 @@ var autoSlide = setInterval(next, 3000);
 
 // Stop auto sliding when mouse is over the image
 img.addEventListener("mouseover", function() {
-    clearInterval(autoSlide);
+  clearInterval(autoSlide);
 });
 
 // Resume auto sliding when mouse leaves the image
 img.addEventListener("mouseout", function() {
-    autoSlide = setInterval(next, 3000);
+  autoSlide = setInterval(next, 3000);
 });
-
 
 let changeColor;
 
 function change() {
-    if (!changeColor) {
-        changeColor = setInterval(flashText, 1000);
-    }
+  if (!changeColor) {
+    changeColor = setInterval(flashText, 1000);
+  }
 }
 
 function flashText() {
-    let teXt = document.getElementById("hello"); // Fixed variable declaration
-    // teXt.className = teXt.className === "go" ? "stop" : "go";
-    if (teXt.className === "go"){
-        teXt.className = "stop"
-    }else if (teXt.className ==="stop"){
-        teXt.className = "go-to"
-    }else if (teXt.className === "go-to"){
-        teXt.className = "to-go"
-    }
-    else{
-        teXt.className = "stop"
-    }
+  let teXt = document.getElementById("hello"); // Fixed variable declaration
+  // teXt.className = teXt.className === "go" ? "stop" : "go";
+  if (teXt.className === "go") {
+    teXt.className = "stop";
+  } else if (teXt.className === "stop") {
+    teXt.className = "go-to";
+  } else if (teXt.className === "go-to") {
+    teXt.className = "to-go";
+  } else {
+    teXt.className = "go";
+  }
 }
 
 function stop() {
-    clearInterval(changeColor); // Clear the interval by passing the interval ID
-    changeColor = null;
+  clearInterval(changeColor);
+  changeColor = null;
 }
 
-document.getElementById("start").addEventListener("click", change);
-document.getElementById("stop").addEventListener("click", stop);
+// document.getElementById("start").addEventListener("click", change);
+// document.getElementById("stop").addEventListener("click", stop);
 
-
+setInterval(myTimer, 1000);
+function myTimer() {
+  const date = new Date();
+  document.getElementById("demo").innerHTML = date.toLocaleTimeString({
+    hour12: true,
+  });
+}
