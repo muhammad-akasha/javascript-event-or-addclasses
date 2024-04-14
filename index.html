@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+        height: 500px;
+      }
+      .large {
+        width: 100%;
+        height: 450px;
+      }
+      .btn {
+        position: absolute;
+        top: 30%;
+        left: 93%;
+        font-size: 100px;
+        cursor: pointer;
+        color: red;
+        font-family: sans-serif;
+      }
+      .btn2 {
+        position: absolute;
+        top: 30%;
+        left: 2%;
+        font-size: 100px;
+        cursor: pointer;
+        color: red;
+        font-family: sans-serif;
+      }
+      .right {
+        transform: translateX(-100%);
+      }
+
+      .left {
+        transform: translateX(100%);
+      }
+      .go {
+        color: red;
+      }
+      .stop {
+        color: blue;
+      }
+      .go-to{
+          color: purple
+      }
+      .to-go{
+          color: rgb(221, 235, 32)
+      }
+      h1 {
+        font-size: 70px;
+        text-align: center;
+      }
+      .btn-div{
+          margin: 20px;display:flex;justify-content: center;gap: 10px;
+      }
+      #start,
+      #stop {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <figure style="position: relative">
+      <img src="./3.jpg" alt="wallpaper" />
+    </figure>
+    <div class="btn2"><</div>
+    <div class="btn">></div>
+
+    <div id="hello">
+      <h1>hello world</h1>
+    </div>
+    <div class="btn-div">
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
